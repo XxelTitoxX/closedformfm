@@ -212,10 +212,11 @@ def train(cfg):
                         x0 = torch.randn_like(x1)
 
                         if cfg.t_sampling.strategy == "uniform":
-                            t = uniform_sampling(x0, tmin, tmax)
+                            t = uniform_sampling(x0, tmin, tmax) # (batch_size, 1)
                         elif cfg.t_sampling.strategy == "biased":
                             t = biased_sampling(x0, tmin, tmax, tc=cfg.t_sampling.tc, bump_weight=cfg.t_sampling.bump_weight, bump_width=cfg.t_sampling.bump_width)
-                        t_ = pad_t_like_x(t, x0)
+                            # (batch_size, 1)
+                        t_ = pad_t_like_x(t, x0) 
                         xt = (1 - t_) * x0 + t_ * x1
                         if expected_ucond and model_name == "icfm":
                             # TODO larger batchsize for x1_prime
