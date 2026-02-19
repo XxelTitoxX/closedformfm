@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: closedformfm
+Version: 0.1.0
+Summary: Code of the NeurIPS 2025 paper On the Closed-Form of Flow Matching: Generalization Does Not Arise from Target Stochasticity
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: clean-fid>=0.1.35
+Requires-Dist: fld @ git+https://github.com/marcojira/fld.git
+Requires-Dist: hydra-core>=1.3.2
+Requires-Dist: hydra-submitit-launcher>=1.2.0
+Requires-Dist: matplotlib>=3.10.7
+Requires-Dist: mlflow>=3.5.1
+Requires-Dist: pandas>=2.3.3
+Requires-Dist: pot>=0.9.6.post1
+Requires-Dist: setuptools>=80.9.0
+Requires-Dist: torchcfm>=1.0.7
+Requires-Dist: torchdyn>=1.0.6

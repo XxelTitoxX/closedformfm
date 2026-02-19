@@ -1,0 +1,6 @@
+# @package _global_
+
+trainer:
+  n_epochs: 20
+
+run_name: 'light_toy${net.dim}d_bs${optimizer.batch_size}_lr${optimizer.lr}'

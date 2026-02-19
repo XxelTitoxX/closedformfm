@@ -1,0 +1,16 @@
+pyproject.toml
+src/train_cifar10.py
+src/train_toy2d.py
+src/closedformfm.egg-info/PKG-INFO
+src/closedformfm.egg-info/SOURCES.txt
+src/closedformfm.egg-info/dependency_links.txt
+src/closedformfm.egg-info/requires.txt
+src/closedformfm.egg-info/top_level.txt
+src/models/simple.py
+src/utils/cifar10.py
+src/utils/compute_fid.py
+src/utils/core.py
+src/utils/mean_cfm.py
+src/utils/metrics.py
+src/utils/otcfm.py
+src/utils/structured_conf.py

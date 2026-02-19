@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - /paths/home.yaml
+
+hydra:
+  run:
+    dir: .
+  sweep:
+    dir: .
+    subdir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}

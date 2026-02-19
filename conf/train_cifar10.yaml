@@ -1,0 +1,58 @@
+defaults:
+  - /base.yaml
+  - _self_
+
+net:
+  num_channels: 128
+
+optimizer:
+  batch_size: 128
+  lr: 0.0002
+  warmup: 5000
+  ema_decay: 0.9999
+  ema_start: 1000
+  grad_clip: 1
+
+loss:
+  expected_ucond: True
+  n_samples_mean: 128
+  batch_size_mean: 128
+  sigmamin: 0.0
+  model_name: "icfm"
+  rescaled: False
+  tmin: 0.
+  tmax: 1.
+  special: ''
+
+trainer:
+  total_steps: 50001
+  dump_models: True
+  dump_every: 100000
+  dump_points: False
+  nodump_before: 15000
+  compute_fid5k_every: 5000
+  compute_fid50k_every: 50000
+  save_model_every: 5000 # in steps
+  batch_size_fid: 124
+  silent_tqdm: False
+  compute_pr: True
+  pr_k: 3
+  pr_subset_size: 10000
+  pr_seed: 0
+
+sampler:
+  integration_method: "euler"
+  integration_steps: 10
+
+data:
+  root: "${oc.env:HOME}/datasets"
+  n_subsample: 50000
+  random_horizontal_flip: True
+
+t_sampling:
+  strategy: "uniform" # "uniform" or "biased"
+  bump_weight: 0.5
+  bump_width: 0.2
+  tc: 0.2
+
+run_name: "${loss.model_name}_expected${loss.expected_ucond}_ema${optimizer.ema_decay}_ema_start${optimizer.ema_start}_rescaled${loss.rescaled}_bs${optimizer.batch_size}_lr${optimizer.lr}_n_mean${loss.n_samples_mean}"

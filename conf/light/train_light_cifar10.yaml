@@ -1,0 +1,24 @@
+# @package _global_
+
+trainer:
+  total_steps: 101
+  dump_models: False
+  dump_every: 100
+  dump_points: False
+  nodump_before: 10
+  compute_fid5k_every: 5000
+  compute_fid50k_every: 50000
+  save_model_every: 5000 # in steps
+  batch_size_fid: 124
+  silent_tqdm: True
+  compute_pr: True
+  pr_k: 3
+  pr_subset_size: 2000
+  pr_seed: 0
+
+
+data:
+  n_subsample: 512
+  random_horizontal_flip: True
+
+#run_name: 'light_cifar10${net.dim}d_bs${optimizer.batch_size}_lr${optimizer.lr}'

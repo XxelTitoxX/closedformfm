@@ -1,0 +1,4 @@
+# @package _global_
+
+data:
+  root: ${oc.env:DSDIR}
