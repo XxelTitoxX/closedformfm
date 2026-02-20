@@ -64,7 +64,6 @@ def main():
     parser.add_argument("--n_tsteps", type=int, default=21, help="Number of time steps in [0,1]")
     parser.add_argument("--batch_size_xt", type=int, default=128, help="Batch size for x0/x1 (x_t) pairs")
     parser.add_argument("--batch_size_x1prime", type=int, default=128, help="Batch size for x1' samples")
-    parser.add_argument("--batch_size_mean", type=int, default=128, help="Batch size for u* expectation")
     parser.add_argument("--num_channels", type=int, default=128, help="UNet channels")
     parser.add_argument("--sigmamin", type=float, default=0.0, help="Sigma_min for u*")
     parser.add_argument("--use_ema", action="store_true", help="Use ema_model from checkpoint")
@@ -171,4 +170,4 @@ def main():
 
 if __name__ == "__main__":
     #main()
-    plot_from_csv("experiments/outputs/velocity_error_checkpoints_20260208_100101_n5000_CFM_noflip_step_50000.pt_train5000_t21_samp1024_256.csv", "experiments/outputs/velocity_error.png")
+    plot_from_csv("experiments/outputs/velocity_error_checkpoints_20260219_100101_n5000_CFM_noflip_bias_step_50000.pt_train5000_t21_samp1024_128.csv", "experiments/outputs/velocity_error_n5000_CFM_noflip_bias.png")
